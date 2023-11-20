@@ -1,0 +1,121 @@
+﻿@model Web_24BM.Models.Contacto
+
+<div class="mb-5">
+    
+    <header class="header-cv">
+        <div class="container">
+                 <div class="d-grid custom-grid-cv">
+                    <article class="text-center">
+                            <img class="w-100 col-12 rounded-circle"
+                                 style="width:200px;height: 200px;object-fit: cover;"
+                                 src="/uploads/@Model.Foto"
+                                 onerror="this.src='https://icon-library.com/images/no-user-image-icon/no-user-image-icon-27.jpg'" />
+                        @functions {
+                            byte[] ReadFully(Stream input)
+                            {
+                                using (MemoryStream ms = new MemoryStream())
+                                {
+                                    input.CopyTo(ms);
+                                    return ms.ToArray();
+                                }
+                            }
+                        }
+                    </article>
+
+                    <article class="p-3" style="width: 100%;">
+                            
+                            <h2 class="mt-2 text-white">@Model.Nombre @Model.Apellidos</h2>
+                            <p class="text-white"><strong>Email:</strong> <a href="mailto:email@example.com">@Model.Email</a></p>
+                            <hr/>
+                            <p class="text-white">
+                                Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final. Wikipedia
+                            </p>
+                    </article>
+                </div>
+        </div>
+    </header>
+
+    <section class="information-cv">
+        <div class="container">
+            <article class="grid-information-cv">
+                <div>
+                    <p class="text-white text-center">
+                        @Model.Email
+                    </p>
+                </div>
+                <div>
+                    <p  class="text-white">
+                        @Model.SitioWeb
+                    </p>
+                </div>
+                <div>
+                    <p  class="text-white">
+                        @Model.Telefono
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+   <section class="container my-5">
+        
+        <div class="row">
+            
+            <article class="col-md-6">
+
+                <h3>Experiencia</h3>
+
+                <hr/>
+
+                <ul>
+                    @foreach (var experiencia in Model.Experiencia)
+                    {
+                        <li class="article-experiencia-cv">
+
+                            <h4> @experiencia.Titulo </h4>
+
+                            <p>
+                                @experiencia.Descripcion
+                            </p>
+                        </li>
+                    }
+                </ul>
+
+            </article>
+            
+            <article class="col-md-6">
+
+                <h3>habilidades</h3>
+
+                <hr/>
+
+                <ul>
+                    @foreach (var habilidad in Model.Habilidades)
+                    {
+                        <li class="article-experiencia-cv">
+
+                            <h4> @habilidad.Titulo </h4>
+
+                            <p>
+                                @*@experiencia.*@
+                            </p>
+                        </li>
+                    }
+                </ul>
+
+            </article>
+        </div>
+
+   </section>
+</div>
+
+<style>
+    .container-fluid
+    {
+        padding: 0 !important;
+    }
+    nav
+    {
+        margin-bottom: 0 !important;
+    }
+</style>

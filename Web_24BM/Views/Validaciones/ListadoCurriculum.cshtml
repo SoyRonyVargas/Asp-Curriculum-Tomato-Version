@@ -1,0 +1,91 @@
+﻿@model List<Contacto>
+
+<section class="container mx-auto my-5">
+     <article class="row">
+        
+        @if (TempData["Eliminado"] != null)
+        {
+            @if ((bool)TempData["Eliminado"])
+            {
+                <div class="alert alert-success" role="alert">
+                    Eliminado correctamente
+                </div>
+            }
+        }
+
+        @if (TempData["Actualizado"] != null)
+        {
+            @if ((bool)TempData["Actualizado"])
+            {
+                <div class="alert alert-success" role="alert">
+                    Actualizado correctamente
+                </div>
+            }
+        }
+        
+        
+        <div class="col-12 mb-5">
+            <a class="btn btn-primary" href="/Validaciones">Crear Curriculum</a>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Email</th>
+                    <th scope="col"> Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr>
+                        <th scope="row"> @(i+1) </th>
+                        <td> @Model[i].Nombre </td>
+                        <td> @Model[i].Apellidos </td>
+                        <td> @Model[i].Email </td>
+                        <td>
+                            <div class="custom-css">
+                                <form method="post" asp-action="EliminarCurriculum">
+                                    <button value="@Model[i].Id" name="id" type="submit" class="btn btn-danger">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
+
+                                <form method="post" asp-action="ActualizarCurriculum">
+                                    <button value="@Model[i].Id" name="id" type="submit" class="btn btn-info mt-2">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                </form>
+
+                                <button class="d-block btn btn-warning mt-2">
+                                    <a href="/Validaciones/DetallePorId/@Model[i].Id">
+                                        <i class="bi bi-info-circle"></i>
+                                    </a>
+                                </button>
+
+                                <button class="d-block btn btn-success mt-2">
+                                    <a href="/Validaciones/CurriculumPorId/@Model[i].Id">
+                                        <i class="bi bi-eye"></i>
+                                    </a>
+                                </button>
+                            </div>
+
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+     </article>
+</section>
+
+                @*                <style>
+    .custom-css
+    {
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+                                </style>*@

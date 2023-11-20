@@ -1,0 +1,365 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Web_24BM.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Web_24BM.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\img\\1.jpeg",
+      "PackagePath": "staticwebassets\\img\\1.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\img\\279298863_187391210278903_4855443674855829847_n.jpg",
+      "PackagePath": "staticwebassets\\img\\279298863_187391210278903_4855443674855829847_n.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\img\\299157410_1692436947783317_6374977674242083958_n.jpg",
+      "PackagePath": "staticwebassets\\img\\299157410_1692436947783317_6374977674242083958_n.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\img\\3.png",
+      "PackagePath": "staticwebassets\\img\\3.png"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\img\\334781782_3150917461872182_8496163032212640369_n.jpg",
+      "PackagePath": "staticwebassets\\img\\334781782_3150917461872182_8496163032212640369_n.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\img\\escenario 1.jpg",
+      "PackagePath": "staticwebassets\\img\\escenario 1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\uploads\\.gitkeep",
+      "PackagePath": "staticwebassets\\uploads\\.gitkeep"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\uploads\\0554a672-f8b5-4f7a-839c-6b7096e7e56c.jpg",
+      "PackagePath": "staticwebassets\\uploads\\0554a672-f8b5-4f7a-839c-6b7096e7e56c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\uploads\\183d4007-5cdb-4766-9579-2e116471e4df.jpg",
+      "PackagePath": "staticwebassets\\uploads\\183d4007-5cdb-4766-9579-2e116471e4df.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\uploads\\1a8f2e51-ffa3-40f3-b485-fa8321c6ae1d.jpg",
+      "PackagePath": "staticwebassets\\uploads\\1a8f2e51-ffa3-40f3-b485-fa8321c6ae1d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\uploads\\3a478802-2c94-43c0-9588-b67f6fbf1f7d.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\3a478802-2c94-43c0-9588-b67f6fbf1f7d.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\uploads\\52b2061d-c97e-4449-9b08-a245cf1ad1f6.jpg",
+      "PackagePath": "staticwebassets\\uploads\\52b2061d-c97e-4449-9b08-a245cf1ad1f6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\uploads\\721b22c5-3fc4-40e0-9b09-c76bbbab319a.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\721b22c5-3fc4-40e0-9b09-c76bbbab319a.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\uploads\\7e4abe06-dad2-4b1f-bdc4-493f39dffead.jpg",
+      "PackagePath": "staticwebassets\\uploads\\7e4abe06-dad2-4b1f-bdc4-493f39dffead.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\uploads\\7fe39318-24e7-4ce6-9599-3ecff8dcd672.png",
+      "PackagePath": "staticwebassets\\uploads\\7fe39318-24e7-4ce6-9599-3ecff8dcd672.png"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\uploads\\8f37d5c2-ab0d-44fc-b0ec-120b89fba4f9.jpg",
+      "PackagePath": "staticwebassets\\uploads\\8f37d5c2-ab0d-44fc-b0ec-120b89fba4f9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\uploads\\8f4bf822-7c02-436f-bace-1866fca9acca.png",
+      "PackagePath": "staticwebassets\\uploads\\8f4bf822-7c02-436f-bace-1866fca9acca.png"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\uploads\\a5815212-cbc9-4eb6-b2e1-d83798c30cb1.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\a5815212-cbc9-4eb6-b2e1-d83798c30cb1.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\uploads\\b3a6be15-a53d-401e-b025-36a6e7a9f56c.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\b3a6be15-a53d-401e-b025-36a6e7a9f56c.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\uploads\\bf6d1e88-90a5-4dba-8464-ee1fe5293ddd.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\bf6d1e88-90a5-4dba-8464-ee1fe5293ddd.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\uploads\\bfad78b0-7d53-457d-9b02-3ff03328288b.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\bfad78b0-7d53-457d-9b02-3ff03328288b.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\uploads\\c9b1d7e6-6fbc-4d5c-b495-e340b22579e0.png",
+      "PackagePath": "staticwebassets\\uploads\\c9b1d7e6-6fbc-4d5c-b495-e340b22579e0.png"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\uploads\\f17bb686-6120-4c68-93cd-0e509f5ffbb0.png",
+      "PackagePath": "staticwebassets\\uploads\\f17bb686-6120-4c68-93cd-0e509f5ffbb0.png"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\uploads\\f17ecd7f-32ca-45e4-bc6c-dac32364ce1e.png",
+      "PackagePath": "staticwebassets\\uploads\\f17ecd7f-32ca-45e4-bc6c-dac32364ce1e.png"
+    },
+    {
+      "Id": "C:\\Users\\Darth\\Documents\\GitHub\\C#\\Recuperacion\\Web_24BM\\wwwroot\\uploads\\fb5be3d6-b6ed-4b3d-bc44-ae8da4462c22.png",
+      "PackagePath": "staticwebassets\\uploads\\fb5be3d6-b6ed-4b3d-bc44-ae8da4462c22.png"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Web_24BM.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.Web_24BM.props",
+      "PackagePath": "build\\Web_24BM.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.Web_24BM.props",
+      "PackagePath": "buildMultiTargeting\\Web_24BM.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.Web_24BM.props",
+      "PackagePath": "buildTransitive\\Web_24BM.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

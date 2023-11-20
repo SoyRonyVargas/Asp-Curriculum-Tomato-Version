@@ -1,0 +1,88 @@
+﻿@model Web_24BM.Models.Contacto 
+
+<section class="container mt-5">
+
+    <div class="row">
+
+        <div class="col-12">
+            <h2 class="text-center">Edita tu curriculum</h2>
+        </div>
+        <div class="col-6 mx-auto card p-4 mt-4">
+            <form asp-action="ActualizarContactoFinal" method="post" enctype="multipart/form-data">
+                    <input type="hidden"
+                           asp-for="Id"
+                           name="Id"
+                           class="form-control"
+                           required />
+                <div class="mb-3">
+                    
+                    <label for="exampleFormControlInput1" class="form-label">Nombres</label>
+                    
+                    <input  type="text"
+                           asp-for="Nombre"
+                           class="form-control"
+                           required />
+                    <span asp-validation-for="Nombre" class="text-danger mt-3 d-block"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label for="apellidos" class="form-label">Apellidos</label>
+                    <input type="text" asp-for="Apellidos" class="form-control" id="apellidos" placeholder="Tus apellidos">
+                    <span asp-validation-for="Apellidos" class="text-danger mt-3 d-block"></span>
+
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" asp-for="Email" class="form-control" id="email" placeholder="prueba@ejemplo.com">
+                    <span asp-validation-for="Email" class="text-danger mt-3 d-block"></span>
+                </div>
+
+          @*      <div class="mb-3">
+                    <label for="Curp" class="form-label">CURP</label>
+                    <input type="text" asp-for="Curp" class="form-control" id="curp" placeholder="Tu Curp...">
+                    <span asp-validation-for="Curp" class="text-danger mt-3 d-block"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Fecha de Nacimiento</label>
+                    <input type="date" asp-for="FechaNacimiento" class="form-control" placeholder="28-12-1990">
+                    <span asp-validation-for="FechaNacimiento" class="text-danger mt-3 d-block"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Direccion</label>
+                    <input type="text" asp-for="Direccion" class="form-control" placeholder="Cancun...">
+                    <span asp-validation-for="Direccion" class="text-danger mt-3 d-block"></span>
+                </div>*@
+
+             @*   <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Foto</label>
+                    <input type="file" asp-for="Foto" class="form-control" placeholder="Tu imagen">
+                    <span asp-validation-for="Foto" class="text-danger mt-3 d-block"></span>
+                </div>*@
+
+                @* <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Foto</label>
+                    <input type="file" asp-for="Foto" class="form-control" placeholder="Tu imagen">
+                    <span asp-validation-for="Foto" class="text-danger mt-3 d-block"></span>
+                </div> *@
+             @*   <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Objetivo</label>
+                    <textarea class="form-control" asp-for="Objetivo" rows="3"></textarea>
+                    <span asp-validation-for="Objetivo" class="text-danger mt-3 d-block"></span>
+                </div>*@
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-outline-primary">Enviar</button>
+                </div>
+            </form>
+        </div>
+        @*<div class="col-4">
+        <h3>Solicita información</h3>
+        <p>Envianos tu comentario y te responderemos en breve...</p>
+        </div>*@
+    </div>
+</section>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

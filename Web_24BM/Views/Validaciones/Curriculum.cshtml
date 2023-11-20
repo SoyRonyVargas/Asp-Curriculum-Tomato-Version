@@ -1,0 +1,59 @@
+﻿@model Web_24BM.Models.Curriculum
+
+    <div class="container mt-5">
+        <div class="row">
+        @if (TempData["Completado"] != null)
+            {
+                <div class="alert alert-success" role="alert">
+                    Se ha guardado correctamente en la base de datos
+                </div>
+            }
+            <div class="col-md-4 text-center">
+            @if (Model.Foto != null)
+            {
+                <img class="img-thumbnail rounded-circle" style="width:300px; height: 300px;" src="data:@(Model.Foto.ContentType);base64,@Convert.ToBase64String(ReadFully(Model.Foto.OpenReadStream()))" />
+            }
+            @functions {
+                byte[] ReadFully(Stream input)
+                {
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        input.CopyTo(ms);
+                        return ms.ToArray();
+                    }
+                }
+            }
+            </div>
+            <div class="card" style="width: 50rem;">
+            <div class="col-md-8">
+                <h1 class="mt-2">@Model.Nombre</h1>
+                <p>@Model.Apellidos</p>
+                <p>Email: <a href="mailto:email@example.com">@Model.Email</a></p>
+            </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h2>Objetivo Profesional</h2>
+              
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h3>Experiencia Laboral</h3>
+                <div class="list-group">
+                    <div class="list-group-item">
+                        <h5 class="mb-1">Puesto:</h5>
+                        <p class="mb-1">Empresa:</p>
+                        <p class="mb-1">Contacto:</p>
+                        <p class="mb-1">Fecha de Inicio:</p>
+                        <p class="mb-1">Fecha de Fin:</p>
+                    </div>
+
+                    <!-- Puedes agregar más bloques como el anterior para cada experiencia laboral -->
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<h1>@ViewBag.Text</h1>
+<p>@TempData["Texto2"]</p>
+<h1>@Model.Titulo</h1>
+
+<form asp-action="Index" asp-controller="Ejemplo" method ="post">
+
+    <input class="form-control" type="text" name="Titulo" placeholder="Ingrese el titulo" />
+    <input class="form-control" type="text" name="Parrafo"  placeholder="Parrafo desde la vista" />
+
+    <input type="submit" value="Enviar" class="btn btn-primary"
+
+
+
+</form>
