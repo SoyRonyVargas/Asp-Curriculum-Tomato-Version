@@ -1,6 +1,7 @@
 ﻿
 www/uploads/*.jpg
 www/uploads/*.png
+www/uploads/*.joeg
 www/uploads/*.gif
 www/uploads/*.avif
 

@@ -55,6 +55,7 @@ namespace Web_24BM.Services
             return this.base_de_datos.Contactos
                     .Include(c => c.Habilidades)
                     .Include(c => c.Experiencia) // Añade más relaciones según sea necesario
+                    .Include(c => c.Educacion) // Añade más relaciones según sea necesario
                     .Where(c => c.Id == id)
                     .FirstOrDefault()!;
         }
@@ -108,13 +109,38 @@ namespace Web_24BM.Services
         {
             try
             {
-                var elemento = this.base_de_datos.Contactos.Where(c => c.Id == id).FirstOrDefault();
-                this.base_de_datos.Contactos.Remove(elemento);
+
+                // Eliminar registros de Experiencia relacionados con el ContactoId específico
+                var experienciasAEliminar = this.base_de_datos.Experiencia.Where(e => e.ContactoId == id);
+                
+                this.base_de_datos.Experiencia.RemoveRange(experienciasAEliminar);
+
                 this.base_de_datos.SaveChanges();
+
+                var educacionAEliminar = this.base_de_datos.Educacion.Where(e => e.ContactoId == id);
+
+                this.base_de_datos.Educacion.RemoveRange(educacionAEliminar);
+
+                this.base_de_datos.SaveChanges();
+
+                var habilidadesAEliminar = this.base_de_datos.Habilidades.Where(e => e.ContactoId == id);
+
+                this.base_de_datos.Habilidades.RemoveRange(habilidadesAEliminar);
+
+                this.base_de_datos.SaveChanges();
+
+                var elemento = this.base_de_datos.Contactos.Where(c => c.Id == id).FirstOrDefault();
+                
+                this.base_de_datos.Contactos.Remove(elemento);
+
+                this.base_de_datos.SaveChanges();
+
                 return true;
+
             }
-            catch
+            catch(Exception e)
             {
+                Debugger.Break();
                 return false;
             }
         }
@@ -131,11 +157,14 @@ namespace Web_24BM.Services
 				Nombre = curriculum.Nombre,
 				Apellidos = curriculum.Apellidos,
 				Email = curriculum.Email,
+                Objetivos = curriculum.Objetivos,
+                TituloLaboral = curriculum.TituloLaboral,
                 Foto = archivo,
                 Telefono = curriculum.Telefono,
                 SitioWeb = curriculum.SitioWeb,
                 Habilidades = curriculum.Habilidades,
-                Experiencia = curriculum.Experiencia
+                Experiencia = curriculum.Experiencia,
+                Educacion = curriculum.Educacion
             };
 
 			this.base_de_datos.Contactos.Add(nuevoContacto);

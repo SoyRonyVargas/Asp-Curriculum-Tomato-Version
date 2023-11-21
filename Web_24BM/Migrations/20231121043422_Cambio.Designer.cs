@@ -12,8 +12,8 @@ using Web_24BM.Data;
 namespace Web_24BM.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231120060219_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20231121043422_Cambio")]
+    partial class Cambio
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -247,6 +247,9 @@ namespace Web_24BM.Migrations
                     b.Property<string>("Nombre")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Objetivos")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("SitioWeb")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -255,9 +258,36 @@ namespace Web_24BM.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("TituloLaboral")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Contactos");
+                });
+
+            modelBuilder.Entity("Web_24BM.Models.Educacion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("ContactoId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Descripcion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Titulo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ContactoId");
+
+                    b.ToTable("Educacion");
                 });
 
             modelBuilder.Entity("Web_24BM.Models.Experiencia", b =>
@@ -293,6 +323,9 @@ namespace Web_24BM.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
 
                     b.Property<int?>("ContactoId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Porcentaje")
                         .HasColumnType("int");
 
                     b.Property<string>("Titulo")
@@ -395,11 +428,22 @@ namespace Web_24BM.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Web_24BM.Models.Educacion", b =>
+                {
+                    b.HasOne("Web_24BM.Models.Contacto", "Contacto")
+                        .WithMany("Educacion")
+                        .HasForeignKey("ContactoId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.Navigation("Contacto");
+                });
+
             modelBuilder.Entity("Web_24BM.Models.Experiencia", b =>
                 {
                     b.HasOne("Web_24BM.Models.Contacto", "Contacto")
                         .WithMany("Experiencia")
-                        .HasForeignKey("ContactoId");
+                        .HasForeignKey("ContactoId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("Contacto");
                 });
@@ -408,13 +452,16 @@ namespace Web_24BM.Migrations
                 {
                     b.HasOne("Web_24BM.Models.Contacto", "Contacto")
                         .WithMany("Habilidades")
-                        .HasForeignKey("ContactoId");
+                        .HasForeignKey("ContactoId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("Contacto");
                 });
 
             modelBuilder.Entity("Web_24BM.Models.Contacto", b =>
                 {
+                    b.Navigation("Educacion");
+
                     b.Navigation("Experiencia");
 
                     b.Navigation("Habilidades");

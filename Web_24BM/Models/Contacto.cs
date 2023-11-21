@@ -10,6 +10,8 @@ public partial class Contacto
     public string? Nombre { get; set; }
 
     public string? Apellidos { get; set; }
+    public string? TituloLaboral { get; set; }
+    public string? Objetivos { get; set; }
 
     public string? Email { get; set; }
 
@@ -19,8 +21,7 @@ public partial class Contacto
 
     public List<Habilidad> Habilidades { get; set; }
     public List<Experiencia> Experiencia { get; set; }
-
-    //public List<DatosLaboral>? DatosLaborales { get; set; }
+    public List<Educacion> Educacion { get; set; }
 
     public string? Foto { get; set; }
 

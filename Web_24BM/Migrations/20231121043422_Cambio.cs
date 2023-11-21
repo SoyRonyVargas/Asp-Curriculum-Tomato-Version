@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Web_24BM.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class Cambio : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -58,6 +58,8 @@ namespace Web_24BM.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nombre = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Apellidos = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TituloLaboral = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Objetivos = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Telefono = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SitioWeb = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -193,6 +195,27 @@ namespace Web_24BM.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Educacion",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Titulo = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ContactoId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Educacion", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Educacion_Contactos_ContactoId",
+                        column: x => x.ContactoId,
+                        principalTable: "Contactos",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Experiencia",
                 columns: table => new
                 {
@@ -209,7 +232,8 @@ namespace Web_24BM.Migrations
                         name: "FK_Experiencia_Contactos_ContactoId",
                         column: x => x.ContactoId,
                         principalTable: "Contactos",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -219,6 +243,7 @@ namespace Web_24BM.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Titulo = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Porcentaje = table.Column<int>(type: "int", nullable: true),
                     ContactoId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -228,7 +253,8 @@ namespace Web_24BM.Migrations
                         name: "FK_Habilidades_Contactos_ContactoId",
                         column: x => x.ContactoId,
                         principalTable: "Contactos",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -271,6 +297,11 @@ namespace Web_24BM.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Educacion_ContactoId",
+                table: "Educacion",
+                column: "ContactoId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Experiencia_ContactoId",
                 table: "Experiencia",
                 column: "ContactoId");
@@ -298,6 +329,9 @@ namespace Web_24BM.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Educacion");
 
             migrationBuilder.DropTable(
                 name: "Experiencia");

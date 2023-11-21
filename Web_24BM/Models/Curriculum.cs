@@ -17,7 +17,11 @@ namespace Web_24BM.Models
         
         public string Email { get; set; }
 
-        
+        [Required(ErrorMessage = "El titulo laboral es requerido.")]
+        public string? TituloLaboral { get; set; }
+
+        public string? Objetivos { get; set; }
+
         [Required(ErrorMessage = "El fecha de nacimiento es requerida.")]
         public string Telefono { get; set; }
 
@@ -29,9 +33,9 @@ namespace Web_24BM.Models
 
         public List<Habilidad>? Habilidades { get; set; }
         public List<Experiencia>? Experiencia { get; set; }
+        public List<Educacion> Educacion { get; set; }
 
         public IFormFile? Foto { get; set; }
-        public List <DatosLaboral>? DatosLaborales { get; set;}
 
     }
 }

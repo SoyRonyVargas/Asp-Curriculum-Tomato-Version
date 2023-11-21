@@ -32,6 +32,13 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="apellidos" class="form-label">Titulo Laboral</label>
+                    <input type="text" asp-for="TituloLaboral" class="form-control" id="TituloLaboral" placeholder="Tus apellidos">
+                    <span asp-validation-for="TituloLaboral" class="text-danger mt-3 d-block"></span>
+
+                </div>
+
+                <div class="mb-3">
                     <label for="email" class="form-label">Correo Electronico</label>
                     <input type="text" asp-for="Email" class="form-control" id="email" placeholder="prueba@ejemplo.com">
                     <span asp-validation-for="Email" class="text-danger mt-3 d-block"></span>
@@ -68,6 +75,12 @@
                     <label for="exampleFormControlInput1" class="form-label">Foto</label>
                     <input type="file" asp-for="Foto" class="form-control"  placeholder="Tu imagen">
                     <span asp-validation-for="Foto" class="text-danger mt-3 d-block"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Objetivos</label>
+                    <textarea asp-for="Objetivos" class="form-control"></textarea>
+                    <span asp-validation-for="Objetivos" class="text-danger mt-3 d-block"></span>
                 </div>
 
                 <hr/>
@@ -112,6 +125,43 @@
                  <section class="row mb-3">
                     <article class="col-6">
                          
+                        <h3> Educación </h3>
+                        
+                        <article class="mb-3">
+                            <label class="form-label">Titulo</label>
+                            <input 
+                                id="input__tituloEducacion"
+                                type="text" 
+                                class="form-control" 
+                                placeholder=""
+                            />
+                        </article>
+
+                        <article class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Descripción</label>
+                            <textarea 
+                                id="input__descripcionEducacion"
+                                class="form-control" 
+                                placeholder=""
+                            ></textarea>
+                        </article>
+                        
+                        <button id="agregarEducacion" type="button" class="btn btn-primary">Agregar</button>
+
+                    </article>
+                   
+                    <div class="col-6">
+                        <ul id="lista-educacion">
+
+                        </ul>
+                    </div>
+                </section>
+
+                 <hr/>
+
+                 <section class="row mb-3">
+                    <article class="col-6">
+                         
                         <h3> Habilidades </h3>
                         
                         <article class="mb-3">
@@ -120,7 +170,18 @@
                                 id="inputtituloHabilidad"
                                 type="text" 
                                 class="form-control" 
-                                placeholder="Tu nombre..."
+                                placeholder=""
+                            />
+                        </article>
+
+                        <article class="mb-3">
+                            <label class="form-label">Porcentaje</label>
+                            <input 
+                                id="inputPorcentajeHabilidad"
+                                type="number"
+                                min="1"
+                                class="form-control" 
+                                placeholder=""
                             />
                         </article>
 
@@ -143,7 +204,11 @@
        
     </div>
 </section>
-
+<footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Recuperación Angel Mendez
+        </div>
+    </footer>
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
@@ -155,6 +220,7 @@
 
     var experiencia = []
     var habilidades = []
+    var educacion = []
 
     document.addEventListener('DOMContentLoaded', function () {
         // Obtener el formulario por su ID
@@ -164,24 +230,86 @@
         const listaExperiencia = document.getElementById('lista-experiencia');
         const listaHabilidades = document.getElementById('lista-habilidades');
         const tituloInput = document.getElementById('titulo');
+        const inputPorcentajeHabilidad = document.getElementById('inputPorcentajeHabilidad');
         const descripcionInput = document.getElementById('descripcion');
-
+        
+        //educacion
+        const input__descripcionEducacion = document.getElementById('input__descripcionEducacion');
+        const input__tituloEducacion = document.getElementById('input__tituloEducacion');
+        const agregarEducacion = document.getElementById('agregarEducacion');
+        const listaEducacion = document.getElementById('lista-educacion');
+        
         const agregarExperienciaBtn = document.getElementById('agregarExperiencia');
         const agregarHabilidadBtn = document.getElementById('agregarHabilidad');
 
-         agregarHabilidadBtn.addEventListener('click', function () {
+         agregarEducacion.addEventListener('click', function () {
             
-             //debugger;
-             // Obtener valores de los campos
+            const titulo = input__tituloEducacion.value;
+            const descripcion = input__descripcionEducacion.value;
+
+            if( titulo.length === 0 )
+            {
+                alert("Ingresa un titulo en el titulo de la educacion")
+                return;
+            }
+
+             if( descripcion.length === 0 )
+            {
+                alert("Ingresa una descripcion en la educacion")
+                return;
+            }
+            
+            // Agregar datos al array global
+            educacion.push({ Titulo: titulo, Descripcion: descripcion });
+
+            // Limpiar campos
+            input__tituloEducacion.value = '';
+            input__descripcionEducacion.value = '';
+
+            actualizarListaEducacion();
+
+        });
+
+         function actualizarListaEducacion() {
+            
+             // Limpiar lista actual
+            listaEducacion.innerHTML = '';
+
+            // Agregar elementos a la lista
+            educacion.forEach(function (edu) {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<h3>${edu.Titulo}</h3><p>${edu.Descripcion}</p>`;
+                listaEducacion.appendChild(listItem);
+            });
+        }
+
+        agregarHabilidadBtn.addEventListener('click', function () {
+            
+            // Obtener valores de los campos
+            const valorPorcentaje = parseInt(inputPorcentajeHabilidad.value)
             const titulo = inputtituloHabilidad.value;
 
+            if( titulo.length === 0 )
+            {
+                alert("Ingresa un titulo")
+                return;
+            }
+
+            if( valorPorcentaje < 0 || valorPorcentaje > 100 )
+            {
+                alert("Ingresa un porcentaje entre 1% a 100%")
+                return;
+            }
+            
             // Agregar datos al array global
-            habilidades.push({ Titulo: titulo, Descripcion: "" });
+            habilidades.push({ Titulo: titulo, Descripcion: "" , Porcentaje:valorPorcentaje  });
 
             // Limpiar campos
             inputtituloHabilidad.value = '';
+            valorPorcentaje.value = '';
 
             actualizarListaHabilidades();
+
         });
 
         agregarExperienciaBtn.addEventListener('click', function () {
@@ -220,7 +348,7 @@
             // Agregar elementos a la lista
             habilidades.forEach(function (exp) {
                 const listItem = document.createElement('li');
-                listItem.innerHTML = `<h3>${exp.Titulo}</h3>`;
+                listItem.innerHTML = `<h3>${exp.Titulo} - ${exp.Porcentaje}%</h3>`;
                 listaHabilidades.appendChild(listItem);
             });
         }
@@ -238,6 +366,15 @@
                 return;
 
             }
+            
+            if( educacion.length === 0 )
+            {
+
+                alert("Ingresa al menos una educacion")
+                
+                return;
+
+            }
 
             if( habilidades.length === 0 )
             {
@@ -251,7 +388,6 @@
             // Obtener los datos del formulario
             const formData = new FormData(formulario);
             
-
             experiencia.forEach((experiencia, index) => {
                 formData.append(`Experiencia[${index}].Titulo`, experiencia["Titulo"]);
                 formData.append(`Experiencia[${index}].Descripcion`, experiencia["Descripcion"]); // Puedes agregar una descripción vacía si no la tienes
@@ -260,6 +396,12 @@
             habilidades.forEach((habilidad, index) => {
                 formData.append(`Habilidades[${index}].Titulo`, habilidad["Titulo"]);
                 formData.append(`Habilidades[${index}].Descripcion`, habilidad["Descripcion"]); // Puedes agregar una descripción vacía si no la tienes
+                formData.append(`Habilidades[${index}].Porcentaje`, habilidad["Porcentaje"]); // Puedes agregar una descripción vacía si no la tienes
+            });
+
+            educacion.forEach((educacion, index) => {
+                formData.append(`Educacion[${index}].Titulo`, educacion["Titulo"]);
+                formData.append(`Educacion[${index}].Descripcion`, educacion["Descripcion"]); // Puedes agregar una descripción vacía si no la tienes
             });
 
             // Preparar la configuración para la solicitud fetch
@@ -270,6 +412,8 @@
 
             // Cambiar la URL del endpoint a donde quieres enviar los datos
             const endpointURL = 'http://localhost:5285/Validaciones/EnviarFormulario'; // Reemplaza esto con tu URL
+
+            debugger;
 
             // Realizar la solicitud fetch
             fetch(endpointURL, fetchConfig)

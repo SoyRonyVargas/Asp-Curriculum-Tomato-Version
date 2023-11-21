@@ -18,7 +18,6 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
 }
 
 .custom-grid-cv {
@@ -51,7 +50,13 @@ body {
 .information-cv {
     background: #353A40;
 }
-
+.cv-image
+{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 100%;
+}
 .grid-information-cv {
     background: #353A40;
     padding: 24px;
@@ -59,7 +64,13 @@ body {
     grid-template-columns: repeat(3 ,1fr );
     place-items: center;
 }
+.custom-progress {
+    background-color: #497EFE;
+}
 
+.custom-color {
+    color: #497EFE !important;
+}
     .grid-information-cv article,
     .grid-information-cv div {
         display: flex;
@@ -69,4 +80,16 @@ body {
 {
     margin: 0 !important;
     margin-bottom: 0 !important;
+}
+.text-justify
+{
+    text-align: justify;
+}
+
+.footer
+{
+    background: #353A40 !important;
+    color: #FFF !important;
+    padding: 24px 0;
+    text-align: center;
 }

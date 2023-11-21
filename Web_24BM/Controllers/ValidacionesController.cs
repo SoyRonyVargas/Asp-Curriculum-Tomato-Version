@@ -58,6 +58,7 @@ namespace Web_24BM.Controllers
         [HttpPost]
         public IActionResult EliminarCurriculum(int id)
         {
+            Debugger.Break();
             var Eliminado = this.contactoService.eliminarCurriculum(id);
             var datos = this.contactoService.getCurriculums();
             TempData["Eliminado"] = Eliminado;
@@ -126,8 +127,8 @@ namespace Web_24BM.Controllers
         [HttpPost]
         public IActionResult EnviarFormulario([FromForm] Curriculum model)
         {
-            
-            //Debugger.Break();
+
+            Debugger.Break();
 
             if (!ModelState.IsValid) return View("Index", model);
 
