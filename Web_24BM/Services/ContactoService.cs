@@ -81,17 +81,38 @@ namespace Web_24BM.Services
             {
 
                 var elemento = this.base_de_datos.Contactos.Where(c => c.Id == model.Id).FirstOrDefault();
-
+                
                 if (elemento == null) return false;
+
+                // Eliminar registros de Experiencia relacionados con el ContactoId específico
+                var experienciasAEliminar = this.base_de_datos.Experiencia.Where(e => e.ContactoId == model.Id);
+
+                this.base_de_datos.Experiencia.RemoveRange(experienciasAEliminar);
+
+                this.base_de_datos.SaveChanges();
+
+                var educacionAEliminar = this.base_de_datos.Educacion.Where(e => e.ContactoId == model.Id);
+
+                this.base_de_datos.Educacion.RemoveRange(educacionAEliminar);
+
+                this.base_de_datos.SaveChanges();
+
+                var habilidadesAEliminar = this.base_de_datos.Habilidades.Where(e => e.ContactoId == model.Id );
+
+                this.base_de_datos.Habilidades.RemoveRange(habilidadesAEliminar);
+
+                this.base_de_datos.SaveChanges();
 
                 elemento.Nombre = model.Nombre;
                 elemento.Apellidos = model.Apellidos;
-                //elemento.Objetivo = model.Objetivo;
-                //elemento.FechaNacimiento = model.FechaNacimiento;
-                //elemento.Direccion = model.Direccion;
-                //elemento.Curp = model.Curp;
+                elemento.Objetivos = model.Objetivos;
                 elemento.Email = model.Email;
-                //elemento.Foto = archivo;
+                elemento.SitioWeb = model.SitioWeb;
+                elemento.TituloLaboral = model.TituloLaboral;
+                elemento.Habilidades = model.Habilidades;
+                elemento.Experiencia = model.Experiencia;
+                elemento.Educacion = model.Educacion;
+                elemento.Telefono = model.Telefono;
 
                 this.base_de_datos.Contactos.Update(elemento);
 
@@ -100,7 +121,7 @@ namespace Web_24BM.Services
                 return true;
 
             }
-            catch
+            catch(Exception ex) 
             {
                 return false;
             }
@@ -140,7 +161,6 @@ namespace Web_24BM.Services
             }
             catch(Exception e)
             {
-                Debugger.Break();
                 return false;
             }
         }

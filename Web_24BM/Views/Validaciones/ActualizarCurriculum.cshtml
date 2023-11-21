@@ -1,88 +1,473 @@
-﻿@model Web_24BM.Models.Contacto 
+﻿@model Web_24BM.Models.Contacto
 
 <section class="container mt-5">
+    
 
     <div class="row">
-
+         
         <div class="col-12">
-            <h2 class="text-center">Edita tu curriculum</h2>
+            <h3 class="text-left">Actualiza tu curriculum</h3>
         </div>
-        <div class="col-6 mx-auto card p-4 mt-4">
-            <form asp-action="ActualizarContactoFinal" method="post" enctype="multipart/form-data">
-                    <input type="hidden"
-                           asp-for="Id"
-                           name="Id"
-                           class="form-control"
-                           required />
+        <div class="col-6 w-100 mt-4 card p-4">
+            
+            <form id="formulario" enctype="multipart/form-data">
+                <input 
+                        type="hidden" 
+                        asp-for="Id" 
+                        class="form-control" />
                 <div class="mb-3">
-                    
-                    <label for="exampleFormControlInput1" class="form-label">Nombres</label>
-                    
-                    <input  type="text"
-                           asp-for="Nombre"
-                           class="form-control"
-                           required />
+                    <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+                    <input 
+                        type="text" 
+                        asp-for="Nombre" 
+                        class="form-control" 
+                        placeholder="Tu nombre..."
+                        required
+                    />
                     <span asp-validation-for="Nombre" class="text-danger mt-3 d-block"></span>
                 </div>
-
+                
                 <div class="mb-3">
                     <label for="apellidos" class="form-label">Apellidos</label>
                     <input type="text" asp-for="Apellidos" class="form-control" id="apellidos" placeholder="Tus apellidos">
                     <span asp-validation-for="Apellidos" class="text-danger mt-3 d-block"></span>
 
                 </div>
+
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
+                    <label for="apellidos" class="form-label">Titulo Laboral</label>
+                    <input type="text" asp-for="TituloLaboral" class="form-control" id="TituloLaboral" placeholder="Tus apellidos">
+                    <span asp-validation-for="TituloLaboral" class="text-danger mt-3 d-block"></span>
+
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo Electronico</label>
                     <input type="text" asp-for="Email" class="form-control" id="email" placeholder="prueba@ejemplo.com">
                     <span asp-validation-for="Email" class="text-danger mt-3 d-block"></span>
+                    @if (@TempData["ErrorCorreo"] != null)
+                    {
+                        <span class="text-danger mt-3 d-block">
+                            Ingresa un correo valido
+                        </span>
+                    }
                 </div>
 
-          @*      <div class="mb-3">
-                    <label for="Curp" class="form-label">CURP</label>
-                    <input type="text" asp-for="Curp" class="form-control" id="curp" placeholder="Tu Curp...">
-                    <span asp-validation-for="Curp" class="text-danger mt-3 d-block"></span>
+                <div class="mb-3">
+                    <label for="Telefono" class="form-label">Telefono</label>
+                    <input type="text" asp-for="Telefono" class="form-control" id="Telefono" placeholder="Tu Curp...">
+                    <span asp-validation-for="Telefono" class="text-danger mt-3 d-block"></span>
+                    @if (@TempData["ErrorCurp"] != null)
+                    {
+                        <span class="text-danger mt-3 d-block">
+                            Ingresa una curp valida
+                        </span>                        
+                    }
                 </div>
+
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Fecha de Nacimiento</label>
-                    <input type="date" asp-for="FechaNacimiento" class="form-control" placeholder="28-12-1990">
-                    <span asp-validation-for="FechaNacimiento" class="text-danger mt-3 d-block"></span>
+                  <label for="basic-url" class="form-label">Sitio Web</label>
+                  <div class="input-group">
+                    <span class="input-group-text" id="basic-addon3">Amazon.com</span>
+                    <input type="text" asp-for="SitioWeb" class="form-control" id="Telefono" placeholder="">
+                  </div>
+                  <span asp-validation-for="SitioWeb" class="text-danger mt-3 d-block"></span>
                 </div>
+                
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Direccion</label>
-                    <input type="text" asp-for="Direccion" class="form-control" placeholder="Cancun...">
-                    <span asp-validation-for="Direccion" class="text-danger mt-3 d-block"></span>
-                </div>*@
+                    <label for="exampleFormControlInput1" class="form-label">Objetivos</label>
+                    <textarea asp-for="Objetivos" class="form-control"></textarea>
+                    <span asp-validation-for="Objetivos" class="text-danger mt-3 d-block"></span>
+                </div>
 
-             @*   <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Foto</label>
-                    <input type="file" asp-for="Foto" class="form-control" placeholder="Tu imagen">
-                    <span asp-validation-for="Foto" class="text-danger mt-3 d-block"></span>
-                </div>*@
+                <hr/>
 
-                @* <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Foto</label>
-                    <input type="file" asp-for="Foto" class="form-control" placeholder="Tu imagen">
-                    <span asp-validation-for="Foto" class="text-danger mt-3 d-block"></span>
-                </div> *@
-             @*   <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Objetivo</label>
-                    <textarea class="form-control" asp-for="Objetivo" rows="3"></textarea>
-                    <span asp-validation-for="Objetivo" class="text-danger mt-3 d-block"></span>
-                </div>*@
+                <section class="row mb-3">
+                    <article class="col-6">
+                         
+                        <h3> Experiencia </h3>
+                        
+                        <article class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Titulo</label>
+                            <input 
+                                id="titulo"
+                                type="text" 
+                                class="form-control" 
+                                placeholder="Tu nombre..."
+                            />
+                        </article>
+
+                        <article class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Descripción</label>
+                            <textarea 
+                                id="descripcion"
+                                class="form-control" 
+                                placeholder="Descripción..."
+                            ></textarea>
+                        </article>
+                        
+                        <button id="agregarExperiencia" type="button" class="btn btn-primary">Agregar</button>
+
+                    </article>
+                   
+                    <div class="col-6">
+                        <ul id="lista-experiencia">
+
+                        </ul>
+                    </div>
+                </section>
+
+                 <hr/>
+
+                 <section class="row mb-3">
+                    <article class="col-6">
+                         
+                        <h3> Educación </h3>
+                        
+                        <article class="mb-3">
+                            <label class="form-label">Titulo</label>
+                            <input 
+                                id="input__tituloEducacion"
+                                type="text" 
+                                class="form-control" 
+                                placeholder=""
+                            />
+                        </article>
+
+                        <article class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Descripción</label>
+                            <textarea 
+                                id="input__descripcionEducacion"
+                                class="form-control" 
+                                placeholder=""
+                            ></textarea>
+                        </article>
+                        
+                        <button id="agregarEducacion" type="button" class="btn btn-primary">Agregar</button>
+
+                    </article>
+                   
+                    <div class="col-6">
+                        <ul id="lista-educacion">
+
+                        </ul>
+                    </div>
+                </section>
+
+                 <hr/>
+
+                 <section class="row mb-3">
+                    <article class="col-6">
+                         
+                        <h3> Habilidades </h3>
+                        
+                        <article class="mb-3">
+                            <label class="form-label">Titulo</label>
+                            <input 
+                                id="inputtituloHabilidad"
+                                type="text" 
+                                class="form-control" 
+                                placeholder=""
+                            />
+                        </article>
+
+                        <article class="mb-3">
+                            <label class="form-label">Porcentaje</label>
+                            <input 
+                                id="inputPorcentajeHabilidad"
+                                type="number"
+                                min="1"
+                                class="form-control" 
+                                placeholder=""
+                            />
+                        </article>
+
+                        <button id="agregarHabilidad" type="button" class="btn btn-primary">Agregar</button>
+
+                    </article>
+                   
+                    <div class="col-6">
+                        <ul id="lista-habilidades">
+
+                        </ul>
+                    </div>
+                </section>
+
                 <div class="mb-3">
-                    <button type="submit" class="btn btn-outline-primary">Enviar</button>
+                    <button id="enviarButton" type="submit" class="btn btn-outline-primary">Enviar</button>
                 </div>
             </form>
         </div>
-        @*<div class="col-4">
-        <h3>Solicita información</h3>
-        <p>Envianos tu comentario y te responderemos en breve...</p>
-        </div>*@
+       
     </div>
 </section>
-
+<footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Recuperación Angel Mendez
+        </div>
+    </footer>
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
+
+<!-- Agrega el siguiente script en la parte inferior del cuerpo de tu HTML -->
+@{
+    var serializedModel = ViewData["SerializedModel"] as string;
+}
+<script>
+    var jsonOptions = {
+        encoder: new TextEncoder(),
+        referenceHandling: 1 // ReferenceHandler.Preserve
+    };
+
+    var model = @Html.Raw(serializedModel);
+
+    console.log("model", model)
+
+    var experiencia = model?.Experiencia["$values"] ?? [];
+    var habilidades = model?.Habilidades["$values"] ?? [];
+    var educacion = model?.Educacion["$values"] ?? [];
+    
+      const inputtituloHabilidad = document.getElementById('inputtituloHabilidad');
+        const listaExperiencia = document.getElementById('lista-experiencia');
+        const listaHabilidades = document.getElementById('lista-habilidades');
+        const tituloInput = document.getElementById('titulo');
+        const inputPorcentajeHabilidad = document.getElementById('inputPorcentajeHabilidad');
+        const descripcionInput = document.getElementById('descripcion');
+    
+        //educacion
+        const input__descripcionEducacion = document.getElementById('input__descripcionEducacion');
+        const input__tituloEducacion = document.getElementById('input__tituloEducacion');
+        const agregarEducacion = document.getElementById('agregarEducacion');
+        const listaEducacion = document.getElementById('lista-educacion');
+        
+        const agregarExperienciaBtn = document.getElementById('agregarExperiencia');
+        const agregarHabilidadBtn = document.getElementById('agregarHabilidad');
+
+    function borrarExperiencia(index)
+    {
+           experiencia.splice(index, 1);
+          actualizarListaExperiencia()
+    }
+
+     function borrarEducacion(index)
+    {
+           educacion.splice(index, 1);
+          actualizarListaEducacion()
+    }
+
+      function borrarHabilidad(index)
+    {
+           habilidades.splice(index, 1);
+          actualizarListaHabilidades()
+    }
+
+     function actualizarListaEducacion() {
+            
+             // Limpiar lista actual
+            listaEducacion.innerHTML = '';
+
+            // Agregar elementos a la lista
+            educacion.forEach(function (edu,index) {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<h3>${edu.Titulo}</h3> <button type="button" onclick="borrarEducacion(${index})" class="btn btn-danger me-2 mb-2"> X </button> <p>${edu.Descripcion}</p>`;
+                listaEducacion.appendChild(listItem);
+            });
+      }
+
+       function actualizarListaExperiencia() {
+            // Limpiar lista actual
+            listaExperiencia.innerHTML = '';
+
+            // Agregar elementos a la lista
+            experiencia.forEach(function (exp,index) {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<h3>${exp.Titulo}</h3> <button type="button" onclick="borrarExperiencia(${index})" class="btn btn-danger me-2 mb-2"> X </button> <p>${exp.Descripcion}</p> `;
+                listaExperiencia.appendChild(listItem);
+            });
+        }
+      
+        function actualizarListaHabilidades() {
+            // Limpiar lista actual
+            
+            listaHabilidades.innerHTML = '';
+
+            // Agregar elementos a la lista
+            habilidades.forEach(function (exp,index) {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<h3>${exp.Titulo} - ${exp.Porcentaje}% <button type="button" onclick="borrarHabilidad(${index})" class="btn btn-danger me-2 mb-2"> X </button></h3>`;
+                listaHabilidades.appendChild(listItem);
+            });
+        }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Obtener el formulario por su ID
+        const formulario = document.getElementById('formulario');
+
+      
+        
+         agregarEducacion.addEventListener('click', function () {
+            
+            const titulo = input__tituloEducacion.value;
+            const descripcion = input__descripcionEducacion.value;
+
+            if( titulo.length === 0 )
+            {
+                alert("Ingresa un titulo en el titulo de la educacion")
+                return;
+            }
+
+             if( descripcion.length === 0 )
+            {
+                alert("Ingresa una descripcion en la educacion")
+                return;
+            }
+            
+            // Agregar datos al array global
+            educacion.push({ Titulo: titulo, Descripcion: descripcion });
+
+            // Limpiar campos
+            input__tituloEducacion.value = '';
+            input__descripcionEducacion.value = '';
+
+            actualizarListaEducacion();
+
+        });
+
+        
+
+        agregarHabilidadBtn.addEventListener('click', function () {
+            
+            // Obtener valores de los campos
+            
+            if( inputPorcentajeHabilidad.value.length === 0 )
+            {
+                alert("Ingresa un porcentaje valido")
+                return;
+            }
+
+            const valorPorcentaje = parseInt(inputPorcentajeHabilidad.value)
+            const titulo = inputtituloHabilidad.value;
+
+            if( titulo.length === 0 )
+            {
+                alert("Ingresa un titulo")
+                return;
+            }
+
+            if( valorPorcentaje < 0 || valorPorcentaje > 100 )
+            {
+                alert("Ingresa un porcentaje entre 1% a 100%")
+                return;
+            }
+            
+            // Agregar datos al array global
+            habilidades.push({ Titulo: titulo, Descripcion: "" , Porcentaje:valorPorcentaje  });
+
+            // Limpiar campos
+            inputtituloHabilidad.value = '';
+            valorPorcentaje.value = '';
+
+            actualizarListaHabilidades();
+
+        });
+
+        agregarExperienciaBtn.addEventListener('click', function () {
+            // Obtener valores de los campos
+            const titulo = tituloInput.value;
+            const descripcion = descripcionInput.value;
+
+            // Agregar datos al array global
+            experiencia.push({ Titulo: titulo, Descripcion: descripcion });
+
+            // Limpiar campos
+            tituloInput.value = '';
+            descripcionInput.value = '';
+
+            // Actualizar la lista de experiencia en la interfaz
+            actualizarListaExperiencia();
+        });
+
+        actualizarListaEducacion()
+        actualizarListaHabilidades()
+        actualizarListaExperiencia()
+
+        // Agregar el evento submit al formulario
+        formulario.addEventListener('submit', function (event) {
+            // Prevenir que el formulario se envíe automáticamente
+            event.preventDefault();
+
+
+            if( experiencia.length === 0 )
+            {
+
+                alert("Ingresa al menos una experiencia")
+                
+                return;
+
+            }
+            
+            if( educacion.length === 0 )
+            {
+
+                alert("Ingresa al menos una educacion")
+                
+                return;
+
+            }
+
+            if( habilidades.length === 0 )
+            {
+
+                alert("Ingresa al menos una habilidad")
+                
+                return;
+
+            }
+
+            // Obtener los datos del formulario
+            const formData = new FormData(formulario);
+            
+            experiencia.forEach((experiencia, index) => {
+                formData.append(`Experiencia[${index}].Titulo`, experiencia["Titulo"]);
+                formData.append(`Experiencia[${index}].Descripcion`, experiencia["Descripcion"]); // Puedes agregar una descripción vacía si no la tienes
+            });
+
+            habilidades.forEach((habilidad, index) => {
+                formData.append(`Habilidades[${index}].Titulo`, habilidad["Titulo"]);
+                formData.append(`Habilidades[${index}].Descripcion`, habilidad["Descripcion"]); // Puedes agregar una descripción vacía si no la tienes
+                formData.append(`Habilidades[${index}].Porcentaje`, habilidad["Porcentaje"]); // Puedes agregar una descripción vacía si no la tienes
+            });
+
+            educacion.forEach((educacion, index) => {
+                formData.append(`Educacion[${index}].Titulo`, educacion["Titulo"]);
+                formData.append(`Educacion[${index}].Descripcion`, educacion["Descripcion"]); // Puedes agregar una descripción vacía si no la tienes
+            });
+
+            // Preparar la configuración para la solicitud fetch
+            const fetchConfig = {
+                method: 'POST',
+                body: formData,
+            };
+
+            // Cambiar la URL del endpoint a donde quieres enviar los datos
+            const endpointURL = 'http://localhost:5285/Validaciones/ActualizarContactoFinal'; 
+
+            // Realizar la solicitud fetch
+            fetch(endpointURL, fetchConfig)
+                .then(response => {
+                    return response.json();
+                })
+                .then(data => {
+                    window.location = `/Validaciones/ListadoCurriculum`
+                })
+                .catch(error => {
+                    // Manejar errores
+                    alert("Error al intentar guardar los datos")
+                    console.error('Error en la solicitud fetch:', error);
+                });
+        });
+    });
+</script>

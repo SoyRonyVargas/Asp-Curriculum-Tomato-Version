@@ -93,3 +93,18 @@ body {
     padding: 24px 0;
     text-align: center;
 }
+
+@media screen and (max-width: 768px)
+{
+    .grid-information-cv {
+        grid-template-columns: 100%;
+        gap: 1rem;
+    }
+    .container {
+        max-width: 90%;
+    }
+    .header-cv
+    {
+        padding: 16px;
+    }
+}

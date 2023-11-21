@@ -6,7 +6,7 @@
     <div class="row">
          
         <div class="col-12">
-            <h3 class="text-left">Formulario de curriculum</h3>
+            <h3 class="text-left">Crea tu curriculum</h3>
         </div>
         <div class="col-6 w-100 mt-4 card p-4">
             
@@ -20,27 +20,28 @@
                         class="form-control" 
                         placeholder="Tu nombre..."
                         required
+                        id="inputNombre"
                     />
                     <span asp-validation-for="Nombre" class="text-danger mt-3 d-block"></span>
                 </div>
                 
                 <div class="mb-3">
                     <label for="apellidos" class="form-label">Apellidos</label>
-                    <input type="text" asp-for="Apellidos" class="form-control" id="apellidos" placeholder="Tus apellidos">
+                    <input id="inputApellidos" type="text" asp-for="Apellidos" class="form-control" id="apellidos" placeholder="Tus apellidos">
                     <span asp-validation-for="Apellidos" class="text-danger mt-3 d-block"></span>
 
                 </div>
 
                 <div class="mb-3">
                     <label for="apellidos" class="form-label">Titulo Laboral</label>
-                    <input type="text" asp-for="TituloLaboral" class="form-control" id="TituloLaboral" placeholder="Tus apellidos">
+                    <input id="inputTituloLaboral" type="text" asp-for="TituloLaboral" class="form-control" id="TituloLaboral" placeholder="Tus apellidos">
                     <span asp-validation-for="TituloLaboral" class="text-danger mt-3 d-block"></span>
 
                 </div>
 
                 <div class="mb-3">
                     <label for="email" class="form-label">Correo Electronico</label>
-                    <input type="text" asp-for="Email" class="form-control" id="email" placeholder="prueba@ejemplo.com">
+                    <input id="inputCorreo" type="text" asp-for="Email" class="form-control" id="email" placeholder="prueba@ejemplo.com">
                     <span asp-validation-for="Email" class="text-danger mt-3 d-block"></span>
                     @if (@TempData["ErrorCorreo"] != null)
                     {
@@ -52,21 +53,15 @@
 
                 <div class="mb-3">
                     <label for="Telefono" class="form-label">Telefono</label>
-                    <input type="text" asp-for="Telefono" class="form-control" id="Telefono" placeholder="Tu Curp...">
+                    <input id="inputTelefono" type="text" asp-for="Telefono" class="form-control" id="Telefono" placeholder="Tu telefono...">
                     <span asp-validation-for="Telefono" class="text-danger mt-3 d-block"></span>
-                    @if (@TempData["ErrorCurp"] != null)
-                    {
-                        <span class="text-danger mt-3 d-block">
-                            Ingresa una curp valida
-                        </span>                        
-                    }
                 </div>
 
                 <div class="mb-3">
                   <label for="basic-url" class="form-label">Sitio Web</label>
                   <div class="input-group">
                     <span class="input-group-text" id="basic-addon3">Amazon.com</span>
-                    <input type="text" asp-for="SitioWeb" class="form-control" id="Telefono" placeholder="">
+                    <input id="inputSitioWeb" type="text" asp-for="SitioWeb" class="form-control" id="Telefono" placeholder="">
                   </div>
                   <span asp-validation-for="SitioWeb" class="text-danger mt-3 d-block"></span>
                 </div>
@@ -222,17 +217,13 @@
     var habilidades = []
     var educacion = []
 
-    document.addEventListener('DOMContentLoaded', function () {
-        // Obtener el formulario por su ID
-        const formulario = document.getElementById('formulario');
-
-        const inputtituloHabilidad = document.getElementById('inputtituloHabilidad');
+      const inputtituloHabilidad = document.getElementById('inputtituloHabilidad');
         const listaExperiencia = document.getElementById('lista-experiencia');
         const listaHabilidades = document.getElementById('lista-habilidades');
         const tituloInput = document.getElementById('titulo');
         const inputPorcentajeHabilidad = document.getElementById('inputPorcentajeHabilidad');
         const descripcionInput = document.getElementById('descripcion');
-        
+    
         //educacion
         const input__descripcionEducacion = document.getElementById('input__descripcionEducacion');
         const input__tituloEducacion = document.getElementById('input__tituloEducacion');
@@ -242,6 +233,68 @@
         const agregarExperienciaBtn = document.getElementById('agregarExperiencia');
         const agregarHabilidadBtn = document.getElementById('agregarHabilidad');
 
+    function borrarExperiencia(index)
+    {
+           experiencia.splice(index, 1);
+          actualizarListaExperiencia()
+    }
+
+     function borrarEducacion(index)
+    {
+           educacion.splice(index, 1);
+          actualizarListaEducacion()
+    }
+
+      function borrarHabilidad(index)
+    {
+           habilidades.splice(index, 1);
+          actualizarListaHabilidades()
+    }
+
+     function actualizarListaEducacion() {
+            
+             // Limpiar lista actual
+            listaEducacion.innerHTML = '';
+
+            // Agregar elementos a la lista
+            educacion.forEach(function (edu,index) {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<h3>${edu.Titulo}</h3> <button type="button" onclick="borrarEducacion(${index})" class="btn btn-danger me-2 mb-2"> X </button> <p>${edu.Descripcion}</p>`;
+                listaEducacion.appendChild(listItem);
+            });
+      }
+
+       function actualizarListaExperiencia() {
+            // Limpiar lista actual
+            listaExperiencia.innerHTML = '';
+
+            // Agregar elementos a la lista
+            experiencia.forEach(function (exp,index) {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<h3>${exp.Titulo}</h3> <button type="button" onclick="borrarExperiencia(${index})" class="btn btn-danger me-2 mb-2"> X </button> <p>${exp.Descripcion}</p> `;
+                listaExperiencia.appendChild(listItem);
+            });
+        }
+      
+        function actualizarListaHabilidades() {
+            // Limpiar lista actual
+            
+            listaHabilidades.innerHTML = '';
+
+            // Agregar elementos a la lista
+            habilidades.forEach(function (exp,index) {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<h3>${exp.Titulo} - ${exp.Porcentaje}% <button type="button" onclick="borrarHabilidad(${index})" class="btn btn-danger me-2 mb-2"> X </button></h3>`;
+                listaHabilidades.appendChild(listItem);
+            });
+        }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Obtener el formulario por su ID
+        const formulario = document.getElementById('formulario');
+
+      
+        
          agregarEducacion.addEventListener('click', function () {
             
             const titulo = input__tituloEducacion.value;
@@ -270,23 +323,21 @@
 
         });
 
-         function actualizarListaEducacion() {
-            
-             // Limpiar lista actual
-            listaEducacion.innerHTML = '';
-
-            // Agregar elementos a la lista
-            educacion.forEach(function (edu) {
-                const listItem = document.createElement('li');
-                listItem.innerHTML = `<h3>${edu.Titulo}</h3><p>${edu.Descripcion}</p>`;
-                listaEducacion.appendChild(listItem);
-            });
-        }
+        
 
         agregarHabilidadBtn.addEventListener('click', function () {
             
             // Obtener valores de los campos
+            
+
+            if( inputPorcentajeHabilidad.value.length === 0 )
+            {
+                alert("Ingresa un porcentaje valido")
+                return;
+            }
+
             const valorPorcentaje = parseInt(inputPorcentajeHabilidad.value)
+
             const titulo = inputtituloHabilidad.value;
 
             if( titulo.length === 0 )
@@ -328,35 +379,75 @@
             actualizarListaExperiencia();
         });
 
-        function actualizarListaExperiencia() {
-            // Limpiar lista actual
-            listaExperiencia.innerHTML = '';
-
-            // Agregar elementos a la lista
-            experiencia.forEach(function (exp) {
-                const listItem = document.createElement('li');
-                listItem.innerHTML = `<h3>${exp.Titulo}</h3><p>${exp.Descripcion}</p>`;
-                listaExperiencia.appendChild(listItem);
-            });
-        }
-
-        function actualizarListaHabilidades() {
-            // Limpiar lista actual
-            
-            listaHabilidades.innerHTML = '';
-
-            // Agregar elementos a la lista
-            habilidades.forEach(function (exp) {
-                const listItem = document.createElement('li');
-                listItem.innerHTML = `<h3>${exp.Titulo} - ${exp.Porcentaje}%</h3>`;
-                listaHabilidades.appendChild(listItem);
-            });
-        }
+        actualizarListaEducacion()
+        actualizarListaHabilidades()
+        actualizarListaExperiencia()
 
         // Agregar el evento submit al formulario
         formulario.addEventListener('submit', function (event) {
             // Prevenir que el formulario se envíe automáticamente
             event.preventDefault();
+
+            const inputNombre = document.getElementById('inputNombre').value
+            const inputApellidos = document.getElementById('inputApellidos').value
+            const inputSitioWeb = document.getElementById('inputSitioWeb').value
+            const inputTituloLaboral = document.getElementById('inputTituloLaboral').value
+            const inputTelefono = document.getElementById('inputTelefono').value
+            const inputCorreo = document.getElementById('inputCorreo').value
+            
+            if( inputNombre.length === 0 )
+            {
+
+                alert("Ingresa un nombre")
+                
+                return;
+
+            }
+
+            if( inputApellidos.length === 0 )
+            {
+
+                alert("Ingresa los apellidos")
+                
+                return;
+
+            }
+
+            if( inputSitioWeb.length === 0 )
+            {
+
+                alert("Ingresa el sitio web")
+                
+                return;
+
+            }
+
+            if( inputTituloLaboral.length === 0 )
+            {
+
+                alert("Ingresa el titulo laboral")
+                
+                return;
+
+            }
+            
+            if( inputTelefono.length === 0 )
+            {
+
+                alert("Ingresa el numero telefonico")
+                
+                return;
+
+            }
+
+            if( inputCorreo.length === 0 )
+            {
+
+                alert("Ingresa el correo electronico")
+                
+                return;
+
+            }
 
             if( experiencia.length === 0 )
             {
@@ -411,27 +502,19 @@
             };
 
             // Cambiar la URL del endpoint a donde quieres enviar los datos
-            const endpointURL = 'http://localhost:5285/Validaciones/EnviarFormulario'; // Reemplaza esto con tu URL
-
-            debugger;
+            const endpointURL = 'http://localhost:5285/Validaciones/EnviarFormulario'; 
 
             // Realizar la solicitud fetch
             fetch(endpointURL, fetchConfig)
                 .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`Error en la solicitud: ${response.status}`);
-                    }
-
                     return response.json();
                 })
                 .then(data => {
-                    // Hacer algo con la respuesta si es necesario
-                    //debugger
-                    console.log('Respuesta del servidor:', data);
-                    window.location = `/Validaciones/CurriculumPorId/${data}`
+                    window.location = `/Validaciones/ListadoCurriculum`
                 })
                 .catch(error => {
                     // Manejar errores
+                    alert("Error al intentar guardar los datos")
                     console.error('Error en la solicitud fetch:', error);
                 });
         });

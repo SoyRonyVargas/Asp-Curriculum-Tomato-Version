@@ -3,6 +3,8 @@ using Web_24BM.Models;
 using Web_24BM.Services;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 
 namespace Web_24BM.Controllers
 {
@@ -58,7 +60,6 @@ namespace Web_24BM.Controllers
         [HttpPost]
         public IActionResult EliminarCurriculum(int id)
         {
-            Debugger.Break();
             var Eliminado = this.contactoService.eliminarCurriculum(id);
             var datos = this.contactoService.getCurriculums();
             TempData["Eliminado"] = Eliminado;
@@ -68,17 +69,19 @@ namespace Web_24BM.Controllers
         [HttpPost]
         public IActionResult ActualizarCurriculum(int id)
         {
+            
             Contacto model = this.contactoService.obtenerCurriculumPorId(id);
-            //Curriculum model2 = new Curriculum()
-            //{
-            //    Apellidos = model.Apellidos,
-            //    Nombre = model.Nombre,
-            //    Direccion = model.Direccion,
-            //    Email = model.Email,
-            //    FechaNacimiento = (DateTime)model.FechaNacimiento,
-            //    Objetivo = model.Objetivo,
 
-            //};
+            var jsonOptions = new JsonSerializerOptions
+            {
+                ReferenceHandler = ReferenceHandler.Preserve,
+                WriteIndented = true // Otras opciones que puedas necesitar
+            };
+
+            var serializedModel = JsonSerializer.Serialize(model, jsonOptions);
+
+            ViewData["SerializedModel"] = serializedModel;
+
             return View("ActualizarCurriculum", model);
         }
 
@@ -88,7 +91,7 @@ namespace Web_24BM.Controllers
         public IActionResult ActualizarContactoFinal(Contacto model)
         {
 
-            if (!ModelState.IsValid) return View("Curriculum", model);
+            if (!ModelState.IsValid) return Content("false");
 
             this.contactoService.ActualizarContacto(model);
 
@@ -96,7 +99,7 @@ namespace Web_24BM.Controllers
 
             TempData["Actualizado"] = true;
 
-            return RedirectToAction("ListadoCurriculum");
+            return Content("true");
 
         }
 
@@ -128,9 +131,7 @@ namespace Web_24BM.Controllers
         public IActionResult EnviarFormulario([FromForm] Curriculum model)
         {
 
-            Debugger.Break();
-
-            if (!ModelState.IsValid) return View("Index", model);
+            if (!ModelState.IsValid) return Content("false");
 
             bool resultCorreo = this.EsDireccionDeCorreoValida(model.Email);
 

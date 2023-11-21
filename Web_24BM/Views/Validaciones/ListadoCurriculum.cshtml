@@ -28,14 +28,19 @@
             <a class="btn btn-primary" href="/Validaciones">Crear Curriculum</a>
         </div>
 
-        <table class="table">
+        <div class="card">
+            <div class="card-body"> 
+                  <table class="table">
             <thead>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellidos</th>
                     <th scope="col">Email</th>
-                    <th scope="col"> Opciones</th>
+                    <th scope="col"> Eliminar</th>
+                    <th scope="col"> Actualizar</th>
+                    @*<th scope="col"> Detalle</th>*@
+                    <th scope="col"> Curriculum</th>
                 </tr>
             </thead>
             <tbody>
@@ -46,39 +51,40 @@
                         <td> @Model[i].Nombre </td>
                         <td> @Model[i].Apellidos </td>
                         <td> @Model[i].Email </td>
-                        <td>
-                            <div class="custom-css">
-                                <form method="post" asp-action="EliminarCurriculum">
-                                    <button value="@Model[i].Id" name="id" type="submit" class="btn btn-danger">
+                        <td> 
+                            <form method="post" asp-action="EliminarCurriculum">
+                                    <button value="@Model[i].Id" name="id" type="submit" class="btn btn-danger w-50">
                                         <i class="bi bi-trash"></i>
                                     </button>
-                                </form>
-
-                                <form method="post" asp-action="ActualizarCurriculum">
-                                    <button value="@Model[i].Id" name="id" type="submit" class="btn btn-info mt-2">
+                            </form>
+                        </td>
+                        <td>
+                             <form method="post" asp-action="ActualizarCurriculum">
+                                    <button value="@Model[i].Id" name="id" type="submit" class="btn btn-info  w-50">
                                         <i class="bi bi-pencil"></i>
                                     </button>
-                                </form>
-
-                                <button class="d-block btn btn-warning mt-2">
+                             </form>
+                        </td>
+                      @*  <td>
+                              <button class="d-block btn btn-warning mt-2">
                                     <a href="/Validaciones/DetallePorId/@Model[i].Id">
                                         <i class="bi bi-info-circle"></i>
                                     </a>
                                 </button>
-
-                                <button class="d-block btn btn-success mt-2">
+                        </td>*@
+                        <td>
+                            <button class="d-block btn btn-info  w-50">
                                     <a href="/Validaciones/CurriculumPorId/@Model[i].Id">
-                                        <i class="bi bi-eye"></i>
+                                        <i class="bi bi-eye text-white"></i>
                                     </a>
-                                </button>
-                            </div>
-
-
+                            </button>
                         </td>
                     </tr>
                 }
             </tbody>
         </table>
+            </div>
+        </div>
      </article>
 </section>
 

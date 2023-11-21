@@ -22,7 +22,7 @@ namespace Web_24BM.Models
 
         public string? Objetivos { get; set; }
 
-        [Required(ErrorMessage = "El fecha de nacimiento es requerida.")]
+        [Required(ErrorMessage = "El telefono es requerido.")]
         public string Telefono { get; set; }
 
         [Required(ErrorMessage = "El Sitio Web es requerido.")]
